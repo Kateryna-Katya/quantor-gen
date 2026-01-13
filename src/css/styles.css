@@ -1278,3 +1278,118 @@ gap: 20px;
         grid-template-columns: 1fr;
     }
 }
+/* LEGAL PAGES STYLIZATION */
+.pages {
+  padding: 160px 0 100px;
+  background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.05), transparent 40%);
+  min-height: 100vh;
+}
+
+/* Ограничиваем ширину текста для удобства чтения (не более 800-900px) */
+.pages .container {
+  max-width: 900px;
+}
+
+/* Заголовок страницы с градиентом */
+.pages h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 50px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--white) 30%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+/* Подзаголовки с акцентной линией слева */
+.pages h2 {
+  font-size: 1.8rem;
+  margin: 60px 0 24px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pages h2::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 24px;
+  background: var(--accent-secondary);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--accent-secondary);
+}
+
+/* Текстовые блоки */
+.pages p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* Списки с кастомными маркерами */
+.pages ul, .pages ol {
+  margin: 24px 0 40px 10px;
+}
+
+.pages li {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  padding-left: 30px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.pages li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: bold;
+}
+
+/* Выделение жирным */
+.pages strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* Ссылки внутри текста */
+.pages a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.2);
+  padding-bottom: 2px;
+}
+
+.pages a:hover {
+  border-bottom-color: var(--accent-secondary);
+  color: var(--white);
+}
+
+/* Кнопка "Вернуться на главную" */
+.pages__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.pages__back:hover {
+  color: var(--accent-secondary);
+  transform: translateX(-5px);
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .pages { padding: 120px 0 60px; }
+  .pages h1 { font-size: 1.8rem; }
+  .pages h2 { font-size: 1.4rem; }
+  .pages p, .pages li { font-size: 1rem; }
+}
