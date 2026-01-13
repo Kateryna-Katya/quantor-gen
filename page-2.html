@@ -5,29 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 2</title>
-    <link rel="stylesheet" crossorigin href="/quantor-gen/assets/styles-guStct1H.css">
+    <link rel="stylesheet" crossorigin href="/quantor-gen/assets/styles-Cvr4Cmsy.css">
   </head>
   <body>
     <header class="header">
-  <div class="container">
+  <div class="container header__container">
+    <a href="/" class="logo">
+      <span class="logo__dot"></span>
+      <span class="logo__text">Quantor<span>Gen</span></span>
+    </a>
+
     <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
+      <ul class="nav__list">
+        <li><a href="#articles" class="nav__link">Статьи</a></li>
+        <li><a href="#tech" class="nav__link">Технологии</a></li>
+        <li><a href="#cases" class="nav__link">Кейсы</a></li>
+        <li><a href="#tools" class="nav__link">Инструменты</a></li>
+        <li><a href="#about" class="nav__link">О проекте</a></li>
       </ul>
     </nav>
+
+    <div class="header__actions">
+      <a href="#contact" class="btn btn--primary">Связаться</a>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
-
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-menu__nav">
+    <a href="#hero" class="mobile-menu__link">Главная</a>
+    <a href="#about" class="mobile-menu__link">О проекте</a>
+    <a href="#tech" class="mobile-menu__link">Технологии</a>
+    <a href="#articles" class="mobile-menu__link">Статьи</a>
+    <a href="#tools" class="mobile-menu__link">Инструменты</a>
+    <a href="#contact" class="mobile-menu__link btn btn--primary">Начать сейчас</a>
+  </nav>
+</div>
 
     <main>
       <div class="container">
@@ -38,20 +54,59 @@
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
+  <div class="container footer__grid">
+    <div class="footer__col footer__col--brand">
+      <a href="/" class="logo">
+        <span class="logo__dot"></span>
+        <span class="logo__text">Quantor<span>Gen</span></span>
       </a>
-    </p>
+      <p class="footer__description">
+        Переосмыслите подход к разработке. Мы создаем решения, которые меняют правила игры в сфере AI.
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Навигация</h4>
+      <ul class="footer__links">
+        <li><a href="#articles">Статьи блога</a></li>
+        <li><a href="#tech">Стек технологий</a></li>
+        <li><a href="#cases">Наши кейсы</a></li>
+        <li><a href="#tools">AI-инструменты</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Юридическая информация</h4>
+      <ul class="footer__links">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookie Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="personal-data-policy.html">Data Processing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__title">Контакты (DE)</h4>
+      <ul class="footer__contact-list">
+        <li>
+          <i data-lucide="map-pin"></i>
+          <span>Friedrichstraße 176, 10117 Berlin, Germany</span>
+        </li>
+        <li>
+          <i data-lucide="phone"></i>
+          <a href="tel:+493012345678">+49 (30) 123-456-78</a>
+        </li>
+        <li>
+          <i data-lucide="mail"></i>
+          <a href="mailto:hello@quantor-gen.blog">hello@quantor-gen.blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>&copy; 2026 QuantorGen. Все права защищены. Предложение активно в странах ЕС.</p>
   </div>
 </footer>
-
   </body>
 </html>
