@@ -70,14 +70,50 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   initHeroScene();
 
-  // 4. SWIPER (ИННОВАЦИИ)
   new Swiper('.innovations-slider', {
-      slidesPerView: 1,
-      spaceBetween: 24,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.next', prevEl: '.prev' },
-      breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
-  });
+    // Базовые настройки
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: false,
+    grabCursor: true,
+
+    // Пагинация и навигация
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+    },
+    navigation: {
+        nextEl: '.next',
+        prevEl: '.prev'
+    },
+
+    // Адаптив
+    breakpoints: {
+        320: {
+            slidesPerView: 1, // Ровно 1 слайд на мобильных
+            spaceBetween: 16
+        },
+        480: {
+            slidesPerView: 1.2, // Чуть-чуть выглядывает следующий
+            spaceBetween: 16
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 24
+        }
+    },
+
+    // Исправление багов инициализации
+    on: {
+        init: function () {
+            this.update(); // Принудительно пересчитать размеры при загрузке
+        },
+    },
+});
 
   // 5. ФОРМА КОНТАКТОВ + КАПЧА
   const contactForm = document.getElementById('contact-form');

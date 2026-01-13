@@ -1393,3 +1393,182 @@ gap: 20px;
   .pages h2 { font-size: 1.4rem; }
   .pages p, .pages li { font-size: 1rem; }
 }
+/* МОБИЛЬНАЯ СТИЛИЗАЦИЯ КЕЙСОВ */
+@media (max-width: 768px) {
+  .cases {
+      padding: 60px 0; /* Уменьшаем отступы секции */
+  }
+
+  .section-header {
+      margin-bottom: 40px;
+      text-align: left; /* На мобильных левое выравнивание часто читается лучше */
+  }
+
+  .section-title {
+      font-size: 1.8rem; /* Уменьшаем заголовок */
+      line-height: 1.2;
+  }
+
+  .section-subtitle {
+      font-size: 1rem;
+      margin-top: 12px;
+  }
+
+  .cases__grid {
+      display: flex;
+      flex-direction: column; /* Карточки строго друг под другом */
+      gap: 24px; /* Компактный зазор между карточками */
+  }
+
+  .case-card {
+      border-radius: 20px; /* Чуть скругляем для мобильного вида */
+  }
+
+  .case-card__image {
+      height: 180px; /* Фиксированная высота для мобильных, чтобы не занимать весь экран */
+  }
+
+  .case-card__image img {
+      opacity: 0.8; /* На мобилках (где нет hover) делаем картинку сразу виднее */
+  }
+
+  .case-card__body {
+      padding: 20px; /* Уменьшаем внутренние отступы в карточке */
+  }
+
+  .case-card__meta {
+      font-size: 0.7rem;
+      margin-bottom: 8px;
+  }
+
+  .case-card__title {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      line-height: 1.3;
+  }
+
+  .case-card__text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      opacity: 0.9;
+  }
+}
+
+/* Дополнительно для совсем маленьких экранов (iPhone SE и т.д.) */
+@media (max-width: 480px) {
+  .section-title {
+      font-size: 1.6rem;
+  }
+
+  .case-card__image {
+      height: 160px;
+  }
+}
+/* ИСПРАВЛЕНИЕ КОНТЕЙНЕРА ИННОВАЦИЙ */
+.innovations {
+  padding: 80px 0;
+  overflow: hidden; /* Критично: обрезаем всё, что вылетает за пределы секции */
+}
+
+.innovations .container {
+  position: relative; /* Для позиционирования стрелок, если нужно */
+}
+
+.innovations-slider {
+  /* Чтобы карточки не обрезались сверху/снизу при hover,
+     но при этом не рвали бока, используем padding */
+  padding: 20px 4px 60px !important;
+  margin: 0 -4px;
+  overflow: visible !important; /* Разрешаем вылет тени карточки */
+}
+
+@media (max-width: 768px) {
+  .innovations {
+      padding: 60px 0;
+  }
+
+  .section-header {
+      margin-bottom: 30px;
+      text-align: left;
+      padding: 0 4px;
+  }
+
+  .blog-card__image {
+      height: 200px; /* Фиксируем высоту на мобилках */
+  }
+
+  .blog-card__content {
+      padding: 20px;
+  }
+
+  .blog-card__title {
+      font-size: 1.2rem;
+      line-height: 1.3;
+  }
+
+  /* Скрываем навигационные стрелки на мобилках, оставляем только точки */
+  .slider-nav {
+      display: none !important;
+  }
+
+  .slider-controls {
+      justify-content: center;
+      margin-top: 20px;
+  }
+
+  /* Делаем точки пагинации крупнее для тапа */
+  .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      margin: 0 6px !important;
+  }
+}
+
+/* Фикс для очень маленьких экранов */
+@media (max-width: 480px) {
+  .blog-card__image {
+      height: 180px;
+  }
+  .blog-card__title {
+      font-size: 1.1rem;
+  }
+}
+/* ИСПРАВЛЕНИЕ СЛАЙДЕРА ДЛЯ МОБИЛЬНЫХ */
+.innovations {
+  padding: 80px 0;
+  overflow: hidden; /* Секция-родитель должна строго резать контент */
+}
+
+.innovations-slider {
+  width: 100%;
+  /* ОЧЕНЬ ВАЖНО: Убираем overflow: visible, который был раньше */
+  overflow: hidden !important;
+
+  /* Добавляем паддинги, чтобы тени и свечение (hover) не обрезались сверху и снизу */
+  padding: 20px 0 60px !important;
+  position: relative;
+}
+
+.swiper-wrapper {
+  /* Фиксируем поведение флекс-контейнера Swiper */
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.blog-card {
+  height: 100%;
+  /* Гарантируем, что карточка не шире, чем рассчитал Swiper */
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .innovations-slider {
+      /* На мобильных разрешаем слайдам быть чуть-чуть шире контейнера для эффекта 1.1 */
+      overflow: visible !important;
+      /* Но чтобы это не рвало сайт, у нас стоит overflow: hidden на родительской секции .innovations */
+  }
+
+  .blog-card__image {
+      height: 200px;
+  }
+}
